@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-from turtle import back
+
 
 class Aplicacion:
     __ventana=None
@@ -17,18 +17,20 @@ class Aplicacion:
         s = ttk.Style()
         s.configure('TFrame', background='white')
         s.configure('TButton', background = '#5cb85c', foreground = 'white')
-        """self.__marcoTitulo = ttk.Frame(self.__ventana, **ops)
-        self.__marcoAltura = ttk.Frame(self.__ventana, **ops)
-        self.__marcoPeso = ttk.Frame(self.__ventana, **ops)
-        self.__marcoBotones = ttk.Frame(self.__ventana, **ops)
-        self.__marcoInforme = ttk.Frame(self.__ventana, **ops)"""
+
+
         self.__titulo = ttk.Label(self.__marco, text="Calculadora de IMC", padding=(200,5), background="#f5f5f5", foreground="black")
         self.__alturaLbl = ttk.Label(self.__marco, text="Altura: ", padding=(5,5), background="white", foreground="#787c85")
         self.__alturaEntry = ttk.Entry(self.__marco, textvariable=self.__altura, width=40)
         self.__alturaUnidad = ttk.Label(self.__marco, text="cm", padding=(5,5), background="#eeeeee", foreground="#787c85")
+
+
         self.__pesoLbl = ttk.Label(self.__marco, text="Peso: ", padding=(5,5), background="white", foreground="#787c85")
         self.__pesoEntry = ttk.Entry(self.__marco, textvariable=self.__peso, width=40)
         self.__pesoUnidad = ttk.Label(self.__marco, text="kg", padding=(5,5), background="#eeeeee", foreground="#787c85")
+
+
+
         self.__botonCalcular = ttk.Button(self.__marco, text="Calcular", command=self.calcular)
         self.__botonLimpiar = ttk.Button(self.__marco, text="Limpiar", command=self.limpiar)
         self.__informe = ttk.Label(self.__marco, textvariable=self.__imc, background="#dff0d8", foreground="#408267")
@@ -45,11 +47,6 @@ class Aplicacion:
         self.__botonLimpiar.grid(column=2, row=3)
         self.__informe.grid(column=1, row=4)
         self.__informe2.grid(column=1, row=5)
-        cols, rows = self.__ventana.grid_size()
-        for col in range(cols):
-            self.__ventana.grid_columnconfigure(col, weight=800)
-        for row in range(rows):
-            self.__ventana.grid_rowconfigure(row)
         self.__ventana.mainloop()
     
 
